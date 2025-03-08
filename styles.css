@@ -1,0 +1,229 @@
+/* General Styles */
+body {
+    font-family: 'Space Mono', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  .galaxy-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .stars, .twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .stars {
+    background: #000 url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    animation: move-stars 200s linear infinite;
+  }
+  
+  .twinkling {
+    background: transparent url('https://www.transparenttextures.com/patterns/starfield.png') repeat;
+    animation: move-twinkling 100s linear infinite;
+  }
+  
+  @keyframes move-stars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+  }
+  
+  @keyframes move-twinkling {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 0; }
+  }
+  
+  header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .header-content {
+    z-index: 2;
+  }
+  
+  header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    margin: 0;
+    animation: glow 2s infinite alternate;
+  }
+  
+  header p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  header button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    background: #ff6f61;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  header button:hover {
+    background: #ff3b2f;
+  }
+  
+  .parallax-planet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/planet.png') no-repeat center center;
+    background-size: contain;
+    z-index: 1;
+  }
+  
+  nav {
+    background: rgba(28, 28, 28, 0.9);
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 1rem;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #ff6f61;
+  }
+  
+  section {
+    padding: 4rem 2rem;
+    margin: 1rem auto;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+  }
+  
+  h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .planet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .planet-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .planet-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .planet-3d {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .planet-3d[data-planet="mercury"] {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/3/30/Mercury_in_color_-_Prockter07_centered.jpg') no-repeat center center/cover;
+  }
+  
+  .planet-3d[data-planet="venus"] {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg') no-repeat center center/cover;
+  }
+  
+  .planet-3d[data-planet="earth"] {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg') no-repeat center center/cover;
+  }
+  
+  .planet-3d[data-planet="mars"] {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg') no-repeat center center/cover;
+  }
+  
+  .planet-3d[data-planet="jupiter"] {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg') no-repeat center center/cover;
+  }
+  
+  .planet-3d[data-planet="saturn"] {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg') no-repeat center center/cover;
+  }
+  
+  .planet-3d[data-planet="uranus"] {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg') no-repeat center center/cover;
+  }
+  
+  .planet-3d[data-planet="neptune"] {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg') no-repeat center center/cover;
+  }
+  
+  .image-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .image-gallery img {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  footer {
+    background: #1c1c1c;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
